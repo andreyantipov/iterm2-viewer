@@ -1,65 +1,84 @@
 #!/usr/bin/env ruby
-# encoding: UTF-8
+# encoding: utf-8
 
+# Resolve dependencies
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+
+# Dependencies
 require 'base64'
 require 'mime/types'
 
+# Core module of application
 module Viewer
 
+  # Metaclass
   class << self
+    # @return [Symbol] instance of configuration hash
+    # @return [Symbol] show interface for initialization withs arguments
     attr_accessor :configuration, :show
   end
 
+  # public method for overriding default configuration
+  # @return [Hash] of parameters 
   def self.configure
     self.configuration ||= Configuration.new
     yield(configuration)
   end
 
+  # Configuration class
   class Configuration
     attr_accessor :viewport
 
-    #defaults
+    # Defaults configuration
     def initialize
       @viewport =
         {
-          width:  "auto",
-          height: "auto",
+          width:  'auto',
+          height: 'auto',
           keep_aspect_ratio: true
         }
     end
   end
 
-  # interface class
+  # initialization method which pass the arguments from the shell
   def self.show(arguments)
     Base.new arguments if arguments.any?
   end
 
+  # Validate and render objects passed in arguments
   class Base
-
+    # Insaniate and render media objects
     def initialize(routes)
-      # display objects
-      routes.each do |object|
-        if exist? object
-          display Media.new object
-        end
-      end
+      routes.each { |object| render Media.new object if exist? object }
     end
 
+    # Determine is file exist or not
+    # @return [Boolean] availability of object
     def exist?(object)
-        File.file? object
+      File.file? object
     end
 
+    # Create new instance of renderable object
     class Media < String
-
+      # @return [Symbol] renderable validator which determine that file is supportable or not
+      # @return [Symbol] data return base64 string of file
       attr_reader :renderable, :data
 
+      # Create new media object 
       def initialize(data)
         super(data)
+        @mime ||= MIME::Types.of(self).first
         @data ||= construct
       end
 
+      # Construct base64 blob from binary
+      # @return [String] base64 data of binary file
+      #   if file is renderable
+      # @return [Boolean] false
+      #   if object can not be render
       def construct
-        if renderable?
+        if self.renderable?
           source = open self
           Base64.encode64(source.read)
         else
@@ -67,45 +86,58 @@ module Viewer
         end
       end
 
+      # Detect current kind such as (application, image, docuemtn) and so on of selected file
+      # @return [String] current kind of file
       def kind
-        MIME::Types.of(self).first.media_type
+        @mime.media_type
       end
 
+      # Detect current type such as (.png, .pdf, .txt) and so on of selected file
+      # @return [String] current type of file
       def type
-        MIME::Types.of(self).first.sub_type
+        @mime.sub_type
       end
 
+      # Determine whether that type is renderable
+      # @note Renderable Types and MIME's listed below in Type module
+      # @return [Boolean] current condition 
       def type_renderable?
-         Type.const_get kind.capitalize
+        Type.const_get kind.capitalize
       rescue NameError
         false
       end
 
+      # Determine whether that type is renderable
+      # @note Renderable Types and MIME's listed below in Type module
+      # @return [Boolean] 
       def kind_renderable?
         type_renderable? ? (Type.const_get(kind.capitalize)::MIME.include? type) : false
       end
       alias_method :renderable?, :kind_renderable?
 
+      # Store renderable types and kinds
       module Type
         module Image
-          MIME = ['jpeg','jpg','png','tiff','gif']
+          MIME = %w(jpeg jpg png tiff gif)
         end
       end
     end
 
-      # TODO: Add options support
-      def display(object)
-        # http://iterm2.com/images.html
-        # based on https://raw.githubusercontent.com/gnachman/iTerm2/master/tests/imgcat
-        puts "\033]1337;File=;inline=1:#{object.data}\a\n" if object.renderable?
-      end
+    # Render object in command line
+    # @todo add options support
+    # @param object [Viewer::Base::Media]
+    def render(object)
+      # @see  http://iterm2.com/images.html
+      # @note based on https://raw.githubusercontent.com/gnachman/iTerm2/master/tests/imgcat
+      puts "\033]1337;File=;inline=1:#{object.data}\a\n" if object.renderable?
     end
+  end
 end
 
-# override defaults
+# Override defaults
 Viewer.configure do |config|
   config.viewport[:width] = 10
 end
 
-# run application with shell parameters
+# Run application with shell parameters
 Viewer.show ARGV

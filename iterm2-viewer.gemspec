@@ -20,4 +20,30 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
+
+  # runtime dependency
+  spec.add_runtime_dependency 'mime-types'
+
+  # docs
+  spec.add_development_dependency 'yard'
+  spec.add_development_dependency 'inch'
+
+  # tests
+  spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'factory_girl'
+  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'reek'
+  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'rspec-expectations'
+  spec.add_development_dependency 'fuubar'
+
+  # automation
+  spec.add_development_dependency 'guard'
+  spec.add_development_dependency 'guard-inch'
+  spec.add_development_dependency 'guard-rubocop'
+  spec.add_development_dependency 'guard-yard'
+  spec.add_development_dependency 'guard-reek'
+  spec.add_development_dependency 'guard-rspec'
+  spec.add_development_dependency 'guard-bundler'
+
 end
