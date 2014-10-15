@@ -1,6 +1,6 @@
-# Iterm2::Viewer
+# iterm2-viewer
 
-TODO: Write a gem description
+Display media files in terminal. iTerm2-nightly is required
 
 ## Installation
 
