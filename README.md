@@ -20,7 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+iterm2-viewer YOUR_IMAGE_FILE_PATH
+```
+or
+```ruby
+iterm2-viewer YOUR_IMAGE_FILE_1_PATH YOUR_IMAGE_FILE_2_PATH
+```
 
 ## Contributing
 
