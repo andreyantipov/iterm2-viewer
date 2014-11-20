@@ -25,11 +25,11 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-iterm2-viewer YOUR_IMAGE_FILE_PATH
+iterm2-viewer IMAGE_FILE_PATH
 ```
 or
 ```ruby
-iterm2-viewer YOUR_IMAGE_FILE_1_PATH YOUR_IMAGE_FILE_2_PATH
+iterm2-viewer IMAGE_FILE_1_PATH IMAGE_FILE_2_PATH
 ```
 --- 
 
@@ -47,7 +47,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/iterm2-viewer/fork )
+1. Fork it ( https://github.com/AndreyAntipov/iterm2-viewer/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
