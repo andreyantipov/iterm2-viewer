@@ -5,8 +5,10 @@
 [![Test Coverage](https://codeclimate.com/github/AndreyAntipov/iterm2-viewer/badges/coverage.svg)](https://codeclimate.com/github/AndreyAntipov/iterm2-viewer)
 
 # iterm2-viewer
-
-Display media files in terminal. iTerm2-nightly is required
+Utility for view images in the terminal
+***
+Note: currently work only on mac iTerm2-nightly
+***
 
 ## Supported types
     - png
@@ -46,8 +48,7 @@ iterm2-viewer IMAGE_FILE_1_PATH IMAGE_FILE_2_PATH
 | `-v` or `--version`   |  show current version         |
 
 
---- 
-
+## How it look like
 ![How it look like 1](https://raw.githubusercontent.com/AndreyAntipov/iterm2-viewer/media/screenshot_1.png "How it look like 1")
 
 ![How it look like 2](https://raw.githubusercontent.com/AndreyAntipov/iterm2-viewer/media/screenshot_2.png "How it look like 2")
