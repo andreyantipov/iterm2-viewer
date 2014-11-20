@@ -9,7 +9,6 @@ Display media files in terminal. iTerm2-nightly is required
 ## Supported types
     - png
     - jpeg
-    - png
     - tiff
     - gif
 
