@@ -18,7 +18,7 @@ module Iterm2
         # initialize whenever application called from iTerm2
         if ENV['TERM_PROGRAM']  == 'iTerm.app'
           arguments.each do |route|
-            Render.new Media.new route if File.file? route
+            Render.new(Media.new route) if File.file? route
           end
         end
        end
