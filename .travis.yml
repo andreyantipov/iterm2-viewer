@@ -1,5 +1,6 @@
 language: ruby
 gemfile:
+install: bundle install
   - gemfiles/Gemfile
 addons:
     code_climate:
