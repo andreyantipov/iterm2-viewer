@@ -12,6 +12,9 @@ module Iterm2
     # @param [String, #arguments] routes to files
     class << self
        def show(arguments)
+         # show current version
+        puts VERSION if arguments[0].to_s == "--version" || arguments[0].to_s == "-v"
+
         # initialize whenever application called from iTerm2
         if ENV['TERM_PROGRAM']  == 'iTerm.app'
           arguments.each do |route|
