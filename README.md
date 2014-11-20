@@ -33,7 +33,7 @@ Or install it yourself as:
 ```ruby
 iterm2-viewer IMAGE_FILE_PATH
 ```
-or
+display multiple images
 ```ruby
 iterm2-viewer IMAGE_FILE_1_PATH IMAGE_FILE_2_PATH
 ```
