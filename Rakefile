@@ -2,7 +2,8 @@ require 'rake/testtask'
 
 Rake::TestTask.new do |t|
     t.libs << 'test'
-    t.pattern = "test/**/*_test.rb"
+    # t.warning = true
+    #t.verbose = true
+    t.pattern = "test/**/test_*.rb"
 end
-
 task :default => [:test]
