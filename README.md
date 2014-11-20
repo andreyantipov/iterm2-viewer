@@ -39,6 +39,13 @@ display multiple images
 ```ruby
 iterm2-viewer IMAGE_FILE_1_PATH IMAGE_FILE_2_PATH
 ```
+
+### Options
+| Key               |  Action                       |
+|:------------------|:-----------------------------:|
+| `-v` or `--version`   |  show current version         |
+
+
 --- 
 
 ![How it look like 1](https://raw.githubusercontent.com/AndreyAntipov/iterm2-viewer/media/screenshot_1.png "How it look like 1")
