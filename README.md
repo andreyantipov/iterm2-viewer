@@ -6,6 +6,13 @@
 
 Display media files in terminal. iTerm2-nightly is required
 
+## Supported types
+    - png
+    - jpeg
+    - png
+    - tiff
+    - gif
+
 ## Installation
 
 Add this line to your application's Gemfile:
