@@ -2,6 +2,7 @@
 [![Dependency Status](https://gemnasium.com/AndreyAntipov/iterm2-viewer.svg)](https://gemnasium.com/AndreyAntipov/iterm2-viewer)
 [![Gem Version](https://badge.fury.io/rb/iterm2-viewer.svg)](http://badge.fury.io/rb/iterm2-viewer)
 [![Build Status](https://travis-ci.org/AndreyAntipov/iterm2-viewer.svg?branch=master)](https://travis-ci.org/AndreyAntipov/iterm2-viewer)
+[![Test Coverage](https://codeclimate.com/github/AndreyAntipov/iterm2-viewer/badges/coverage.svg)](https://codeclimate.com/github/AndreyAntipov/iterm2-viewer)
 
 # iterm2-viewer
 
