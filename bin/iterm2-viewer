@@ -7,21 +7,21 @@ $LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
 require 'iterm2/viewer'
 
 module Iterm2
+  # Display media files in command line
   module Viewer
     # Command line interface
     # @param [String, #arguments] routes to files
     class << self
-       def show(arguments)
-         # show current version
-        puts VERSION if arguments[0].to_s == "--version" || arguments[0].to_s == "-v"
-
+      def show(arguments)
         # initialize whenever application called from iTerm2
-        if ENV['TERM_PROGRAM']  == 'iTerm.app'
-          arguments.each do |route|
-            Render.new(Media.new route) if File.file? route
-          end
-        end
-       end
+        return unless ENV['TERM_PROGRAM'] == 'iTerm.app'
+
+        # show current version
+        puts VERSION if arguments[0].to_s == '--version' || arguments[0].to_s == '-v'
+
+        # initialize routes
+        arguments.each { |route| Render.new(Media.new route) if File.file? route }
+      end
     end
   end
 end

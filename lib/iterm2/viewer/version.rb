@@ -1,5 +1,7 @@
 module Iterm2
+  # Display media files in command line
   module Viewer
-    VERSION = '0.0.5'
+    # Current version of application
+    VERSION = '0.0.6'
   end
 end

@@ -1,0 +1,4 @@
+--no-private
+lib/test/**/*.rb
+-
+*.txt

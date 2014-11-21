@@ -7,7 +7,7 @@
 # 💎 iterm2-viewer
 Utility for view images in the terminal
 
-📎 Note: currently work only on mac iTerm2-nightly
+📎 Note: currently work only in mac iTerm2-nightly
 
 
 

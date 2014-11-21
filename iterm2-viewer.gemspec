@@ -6,10 +6,11 @@ require 'iterm2/viewer/version'
 Gem::Specification.new do |spec|
   spec.name          = 'iterm2-viewer'
   spec.version       = Iterm2::Viewer::VERSION
-  spec.authors       = ['Andrey']
+  spec.authors       = ['Andrey Antipov']
   spec.email         = ['andrey@antipov.me']
-  spec.summary       = %q{Display media files in iTerm2.}
-  spec.description   = %q{Display media files in terminal. iTerm2 is required}
+  spec.summary       = %q(Utility for view images in the terminal)
+  spec.description   = %q(Utility for view images in the terminal. iTerm2-nightly is required)
+  spec.extra_rdoc_files = ['LICENSE.txt', 'README.md']
   spec.homepage      = 'https://github.com/AndreyAntipov/iterm2-viewer'
   spec.license       = 'MIT'
 

@@ -1,0 +1,10 @@
+Style/FileName:
+    Enabled: false
+
+Metrics/LineLength:
+      Max: 100
+
+AllCops:
+    Exclude:
+        - 'Guardfile'
+        - '*.gemspec'
