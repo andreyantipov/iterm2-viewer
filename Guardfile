@@ -26,12 +26,12 @@ end
 guard :minitest, all_after_pass: true do
 #guard :minitest do
   # with Minitest::Unit
-  watch(%r{^test/(.*)\/?test_(.*)\.rb$})
-  watch(%r{^lib/(.*/)?([^/]+)\.rb$})     { |m| "test/#{m[1]}test_#{m[2]}.rb" }
-  watch(%r{^test/test_helper\.rb$})      { 'test' }
+  #watch(%r{^test/(.*)\/?test_(.*)\.rb$})
+  #watch(%r{^lib/(.*/)?([^/]+)\.rb$})     { |m| "test/#{m[1]}test_#{m[2]}.rb" }
+  #watch(%r{^test/test_helper\.rb$})      { 'test' }
 
   # with Minitest::Spec
-  # watch(%r{^spec/(.*)_spec\.rb$})
-  # watch(%r{^lib/(.+)\.rb$})         { |m| "spec/#{m[1]}_spec.rb" }
-  # watch(%r{^spec/spec_helper\.rb$}) { 'spec' }
+  watch(%r{^spec/(.*)\/?spec_(.*)\.rb$})
+  watch(%r{^lib/(.*/)?([^/]+)\.rb$})         { |m| "spec/#{m[1]}spec_#{m[2]}.rb" }
+  watch(%r{^spec/spec_helper\.rb$}) { 'spec' }
 end

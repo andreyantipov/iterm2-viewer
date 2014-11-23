@@ -16,35 +16,44 @@ module Iterm2
     class << self
       def show(arguments)
         # initialize whenever application called from iTerm2 with arguments
-        return unless ENV['TERM_PROGRAM'] == 'iTerm.app' || arguments.nil?
+        return unless ENV['TERM_PROGRAM'] == 'iTerm.app' || !arguments.nil?
 
         # catch options
         if arguments[0] =~ /^(-\w|--\w{2,}?)$/
-          # @todo refactoring
-          # @todo add notification — command not found
+          # @todo Refactoring is needed
+          # @todo Notification, command not found
           version if arguments[0].to_s == '--version' || arguments[0].to_s == '-v'
         # switch to renders
         else
           # clean entire screen
-          # todo: optimize (fit to enitre screen)
-          print "\e[2J\e[f"
+          # @todo Optimize (fit to enitre screen)
 
-          # reveal media files
-          arguments.each do |route|
-            begin
-              Render.new(Media.new route).reveal
-            # skip incorrect routes
-            rescue ArgumentError
-              next
-             end
+          # prerapre  media files for render
+          render arguments
+        end
+      end
+
+      # Preare routes argumetns to render
+      #
+      # @param routes [Array] parameters with path to file
+      def render(objects)
+        return if objects.nil?
+        print "\e[2J\e[f"
+        objects.each do |o|
+          begin
+            Render.new(Media.new o).reveal
+          rescue ArgumentError
+            next
           end
         end
       end
 
+      # Display current version of application
+      #
+      # @return [String] Constant of version of application
       def version
         abort VERSION
       end
-
     end
   end
 end

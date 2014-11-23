@@ -10,7 +10,6 @@ module Iterm2
       #
       # @param object [String] need to prepare to render
       def initialize(object)
-
         # Raise error if file doesn't exist
         fail ArgumentError, 'file doesn\'t exist' unless File.file? object
 
