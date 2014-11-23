@@ -1,18 +1,23 @@
 require 'test_helper'
 
-# Testing render class
-class Render < Minitest::Test
-  def test_that_object_will_not_render_until_argument_isnt_set
-    assert_raises ArgumentError do
-      Render.new
+
+describe Iterm2::Viewer::Render do
+    it 'renderer will not be created without media object as argument' do
+      assert_raises ArgumentError do
+        Iterm2::Viewer::Render.new
+      end
     end
-  end
 
-  def test_that_object_will_not_rendered_with_wrong_type_of_object
-    skip 'this test will pass later'
-  end
+    it 'renderer will not be initialized  with incorrect object argument' do
+      assert_raises ArgumentError do
+        Iterm2::Viewer::Render.new 'String'
+      end
+    end
 
-  def test_that_object_will_render_with_correct_type_of_object
-    skip 'this test will pass later'
-  end
+    it 'render will be initialized if object type will be correct' do
+      file =  File.absolute_path(__dir__ + '/../../../media/supported.png')
+      media = Iterm2::Viewer::Media.new(file)
+
+      Iterm2::Viewer::Render.new(media).wont_be_nil
+    end
 end

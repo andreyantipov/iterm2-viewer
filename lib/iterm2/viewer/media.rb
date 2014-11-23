@@ -1,25 +1,28 @@
 module Iterm2
   module Viewer
     # Create a new media object
-    class Media
+    class Media < String
       # Dependency
       require 'mime/types'
       require 'base64'
 
       # Validate and construct media object
       #
-      # @param object [String] file path which are need to open
+      # @param object [String] need to prepare to render
       def initialize(object)
+
+        # Raise error if file doesn't exist
+        fail ArgumentError, 'file doesn\'t exist' unless File.file? object
+
+        # Get file MIME
         @mime ||= MIME::Types.of(object).first
 
-        # Raise error an error if file type isn't supported
-        fail TypeError unless renderable?
+        # Raise error if file type isn't supported
+        fail TypeError, 'file type isn\'t supported' unless renderable?
 
-        @data ||= renderable? ? construct(object) : nil
+        # construct object and inject blob into parent class
+        super(construct object)
       end
-
-      # @return [Symbol] data return base64 string of file
-      attr_reader :data
 
       # Construct base64 blob from binary
       #
@@ -38,7 +41,7 @@ module Iterm2
       end
 
       # Helper method.
-      # Detect current type such as (.png, .pdf, .txt) and so on of se
+      # Detect current type such as (.png, .pdf, .txt)
       #
       # @return [String] current type of file
       def type
