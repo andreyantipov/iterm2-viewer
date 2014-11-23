@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.1.1
+  - 2.0.0
+  - 1.9.3
+addons:
+    code_climate:
+        repo_token: ab8664da98d6bfb6a14e4bd439bb87efe95b19785f42ba496077b3fd5ef3ecc3
+install: bundle install
+cache: bundler
