@@ -1,7 +1,7 @@
 <h1 align="center">💎 iterm2-viewer</h1>
 <p align="center">
   <a href="//codeclimate.com/github/AndreyAntipov/iterm2-viewer"><img src='https://codeclimate.com/github/AndreyAntipov/iterm2-viewer/badges/gpa.svg' alt='Code Climate' /></a>
-  <a href="//gemnasium.com/AndreyAntipov/iterm2-viewer"><img src='https//gemnasium.com/AndreyAntipov/iterm2-viewer.svg' alt='Dependency Status' /></a>
+  <a href="//gemnasium.com/AndreyAntipov/iterm2-viewer"><img src='http://gemnasium.com/AndreyAntipov/iterm2-viewer.svg' alt='Dependency Status' /></a>
   <a href="//badge.fury.io/rb/iterm2-viewer"><img src='https://badge.fury.io/rb/iterm2-viewer.svg' alt='Gem version' /></a>
   <a href="//travis-ci.org/AndreyAntipov/iterm2-viewer"><img src='https://travis-ci.org/AndreyAntipov/iterm2-viewer.svg?branch=master' alt='Build Status' /></a>
   <a href="//codeclimate.com/github/AndreyAntipov/iterm2-viewer"><img src='https://codeclimate.com/github/AndreyAntipov/iterm2-viewer/badges/coverage.svg' alt='Test Coverage' /></a>
