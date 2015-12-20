@@ -18,7 +18,7 @@
 
 
 ## Video playback (In progress)
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/6UG3PY3G9j8&fe/0.jpg)](http://www.youtube.com/watch?v=6UG3PY3G9j8&fe)
+[![Proof of concept](http://img.youtube.com/vi/6UG3PY3G9j8/0.jpg)](http://www.youtube.com/watch?v=6UG3PY3G9j8&fe)
 
 ## Installation
 
