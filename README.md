@@ -1,5 +1,5 @@
 <h1>💎 iterm2-viewer</h1>
-<p>Utility for view images in the iTerm2</p>
+<p>Utility for view images and videos in the iTerm2</p>
 
 <p>
   <a href="//codeclimate.com/github/AndreyAntipov/iterm2-viewer"><img src='https://codeclimate.com/github/AndreyAntipov/iterm2-viewer/badges/gpa.svg' alt='Code Climate' /></a>
