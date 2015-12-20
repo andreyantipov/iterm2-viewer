@@ -16,6 +16,7 @@
     - jpeg
     - tiff
     - gif
+    - video (todo)
 
 
 
@@ -23,28 +24,13 @@
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'iterm2-viewer'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install iterm2-viewer
-
 
 
 ## Usage
 
 ```ruby
-iterm2-viewer IMAGE_FILE_PATH
-```
-display multiple images
-```ruby
-iterm2-viewer IMAGE_FILE_1_PATH IMAGE_FILE_2_PATH
+iterm2-viewer FILE_PATH
 ```
 
 ##### Options
