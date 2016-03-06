@@ -1,5 +1,5 @@
 <h1>💎 iterm2-viewer</h1>
-<p>Utility for view images and videos in the iTerm2</p>
+<p>Utility for view pictures in the iTerm2</p>
 
 <p>
   <a href="//codeclimate.com/github/AndreyAntipov/iterm2-viewer"><img src='https://codeclimate.com/github/AndreyAntipov/iterm2-viewer/badges/gpa.svg' alt='Code Climate' /></a>
@@ -15,10 +15,6 @@
     - jpeg
     - tiff
     - gif
-
-
-## Video playback (In progress)
-[![Proof of concept](http://img.youtube.com/vi/6UG3PY3G9j8/0.jpg)](http://www.youtube.com/watch?v=6UG3PY3G9j8&fe)
 
 ## Installation
 
